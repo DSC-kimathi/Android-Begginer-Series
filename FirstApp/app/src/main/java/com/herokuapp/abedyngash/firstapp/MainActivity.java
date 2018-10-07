@@ -1,5 +1,6 @@
 package com.herokuapp.abedyngash.firstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 if (!myname.isEmpty()){
                     //Read the name
                     displayGreetings.setText("Hello: " + myname);
+                    Intent home = new Intent(MainActivity.this, HomeActivity.class);
+                    home.putExtra("jina", myname);
+                    startActivity(home);
                 }
                 else {
                     nameEditText.setError("Please enter your name");
